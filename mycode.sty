@@ -1,0 +1,44 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mycode}[01/07/2020 Package for easy import of code tools]
+
+\RequirePackage{listings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PYTHON STYLE
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{9} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{9}  % for normal
+% Style du code python
+\newcommand\pythonstyle{\lstset{
+    language=Python,
+    basicstyle=\ttm\color{codefont},
+    backgroundcolor=\color{codebg},   
+    commentstyle=\color{codecomment},
+    otherkeywords={self},             % Add keywords here
+    keywordstyle=\ttb\color{codekeyword},
+    emph={MyClass,__init__},          % Custom highlighting
+    emphstyle=\ttb\color{codeemph},    % Custom highlighting style
+    stringstyle=\color{codestring},
+    frame=tb,                         % Any extra options here
+    showstringspaces=false            % 
+}}
+
+% Python environment --> USE : \begin{python} ... \end{python}
+\lstnewenvironment{python}[1][]
+{
+    \pythonstyle
+    \lstset{#1}
+}{}
+
+% Python for external files --> USE : \pythonexternal{demo.py}
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline --> USE : \pythoninline{class MyClass}
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+% \ExecuteOptions{pycode}
+
+\endinput

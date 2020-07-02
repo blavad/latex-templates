@@ -1,0 +1,28 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PAGE DE GARDE
+\makeatletter
+\pagenumbering{Alph}
+\thispagestyle{empty}
+\vspace{4cm}
+\begin{picture}(0,0)
+    % \put(-20,-40){\includegraphics[width=0.4\textwidth]{assets/logo_insa.png}}
+    \put(250,-10){\color{theme2}{\begin{minipage}{12cm}\centering \Large\textbf{\@date}\end{minipage}}}
+    
+    % TITRE	
+    \put(-20,-150){\color{black}{\begin{minipage}{\textwidth}\centering \Huge \textbf{\color{theme1}{\@title}}\\
+    \insertrefproj\end{minipage}}}
+
+        
+    \put(-100,-520){\includegraphics[scale=1.3]{assets/cover-img.jpg}}% Illustration à adapter\begin{center}
+
+    \newsavebox{\noms}
+    \savebox{\noms}(300, 300)[tl]{
+    \put(0,0){{\begin{minipage}{6cm} \Large \textbf{Author(s) :} {\color{theme2}\@author} \end{minipage}}}
+    \put(0,-20){{\begin{minipage}{20cm} \Large\textbf{Supervisor(s) :} {\color{theme2}\insertsupervisor} \end{minipage}}}}
+    \put(0,-950){\usebox{\noms}}
+
+\end{picture}
+\makeatother
+\newpage

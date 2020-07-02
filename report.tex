@@ -1,0 +1,55 @@
+\documentclass[a4paper, 11pt]{report}
+% Cette option permet de compiler plus rapidement car elle n'insère que des cadres au lieu des images
+%\documentclass[a4paper, 12pt,draft]{report}
+
+
+% Inclusion des packages
+\usepackage[french,english]{babel}
+\usepackage[utf8]{inputenc} 	%package pour le français sous ubuntu : à vous d'adapter
+\usepackage[T1]{fontenc}	%pour les polices
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry} % choix personnel de marges
+
+%%%%% MY PACKAGES %%%%%%%%%
+\usepackage[colcode, colreport-1]{colette}
+\usepackage{mycode}
+\usepackage{myformat}
+
+\AddThinSpaceBeforeFootnotes % à insérer si on utilise \usepackage[french]{babel}
+\FrenchFootnotes % à insérer si on utilise \usepackage[french]{babel}
+\graphicspath{{assets/}{../assets/}}
+
+% %%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%
+% % INFOS DOCUMENTS
+
+\title{Title (ex: Thesis, Report, Project)}
+\date{January 2020}
+\author{Bob Dylan}
+\supervisor{Bob Marley}
+\refproj{Name of the project (ex: Latex Tutorial)}  % Entrer ici la reference du projet
+
+\begin{document}
+% Add couverture
+\subfile{parts/cover}
+% Add table des matieres
+\subfile{parts/contents}
+% Add introduction
+\subfile{parts/intro}
+% Add parts, sections, etc
+\subfile{parts/part1}
+% \subfile{parts/part2}
+% \subfile{parts/part3}
+% \subfile{parts/part4}
+% Add conclusion
+\subfile{parts/conclusion}
+% Add ressources
+\subfile{parts/ressources}
+% Add bibliographie
+\subfile{parts/biblio}
+% Add annexes
+\subfile{parts/annexes}
+\end{document}

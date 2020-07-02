@@ -1,0 +1,68 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{colette}[01/07/2020 Color Palettes for codes, presentations, reports]
+
+\RequirePackage{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% COLORS DEFINITION %%%%%%%%%%%%%%%%%%%%%
+
+%% Color for code
+\DeclareOption{colcode}{
+    \definecolor{codefont}{rgb}{0.,0.,0.}
+    \definecolor{codebg}{rgb}{0.95,0.95,0.95}
+    \definecolor{codecomment}{rgb}{0,0.5,0}
+    \definecolor{codekeyword}{rgb}{0,0,0.5}
+    \definecolor{codeemph}{rgb}{0.6,0,0}
+    \definecolor{codestring}{rgb}{0.6,0,0.8}
+}
+
+
+\DeclareOption{colcode-1}{
+    \definecolor{codefont}{rgb}{0.9,0.9,0.9}
+    \definecolor{codebg}{rgb}{0.15,0.15,0.15}
+    \definecolor{codecomment}{rgb}{0.3,1.,0.3}
+    \definecolor{codekeyword}{rgb}{0.3,0.3,1.}
+    \definecolor{codeemph}{rgb}{1.,0.3,0.3}
+    \definecolor{codestring}{rgb}{0.8,0,0.9}
+}
+
+
+%% Color for report
+\DeclareOption{colreport}{
+    \definecolor{mainfont}{rgb}{0.,0.,0.}
+    \definecolor{mainbg}{rgb}{1.,1.,1.}
+    \definecolor{theme1}{cmyk}{0.7,0.6,0.5,0.3}
+    \definecolor{theme2}{cmyk}{1,1.,0.2,0}
+    \definecolor{theme3}{cmyk}{1,1.,0.2,0}
+}
+
+\DeclareOption{colreport-1}{
+    \definecolor{mainfont}{HTML}{333333}
+    \definecolor{mainbg}{HTML}{EDEDED}
+    \definecolor{theme1}{HTML}{962D21}
+    \definecolor{theme2}{HTML}{D49625}
+    \definecolor{theme3}{HTML}{DF4937}
+}
+
+\DeclareOption{colreport-2}{
+    \definecolor{mainbg}{HTML}{ececec}
+    \definecolor{mainfont}{HTML}{201b22}
+    \definecolor{theme1}{HTML}{2f435e}
+    \definecolor{theme2}{HTML}{44566c}
+    \definecolor{theme3}{HTML}{4b5e65}
+}
+
+\DeclareOption{colreport-3}{
+    \definecolor{mainfont}{HTML}{000000}
+    \definecolor{mainbg}{HTML}{e7e7e7}
+    \definecolor{theme1}{HTML}{5e3930}
+    \definecolor{theme2}{HTML}{2473ea}
+    \definecolor{theme3}{HTML}{9a9a9a}
+}
+
+\ExecuteOptions{colcode, colreport}
+
+\ProcessOptions\relax
+
+\endinput
