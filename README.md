@@ -7,7 +7,7 @@ Latex template to write scientific documents.
 - scientific paper template (coming soon)
 - thesis template (coming soon)
 
-# Report
+## Report
 
 <object data="report-color-1.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="report-color-1.pdf">
